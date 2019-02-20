@@ -2,19 +2,31 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class App extends Component {
-  showAlert(report){
-    console.log(report);
-  }
+constructor(){
+    super();
+    this.state = {
+            data: [],
+            errors: null
+    };
+}
 
-  getData(){
-    axios.get('http://www3.septa.org/hackathon/TrainView/')
-    .then(function (response) {
-        console.log(response);
-      });
-  }
+showAlert(report){
+  console.log(report);
+}
 
-  render(){
+getData(){
+  axios.get('http://www3.septa.org/hackathon/TrainView/')
+  .then(function (response) {
+      console.log(response);
+    });
+}
+
+componentDidMount() {
     this.getData();
+}
+
+render() {
+        const { isLoading, data } = this.state;
         return(
             <header className="mdl-layout__header mdl-layout__header--scroll mdl-color--grey-200">
             <div className="mdl-layout__header-row">
