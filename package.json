@@ -2,6 +2,7 @@
   "name": "septa",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.1",
@@ -10,13 +11,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development"
-  },
-  "babel": {
-    "presets": [
-      "env",
-      "react"
-    ]
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --mode development --hot --inline"
   },
   "eslintConfig": {
     "extends": "react-app"
