@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class App extends Component {
   showAlert(report){
     console.log(report);
   }
 
+  getData(){
+    axios.get('http://www3.septa.org/hackathon/TrainView/')
+    .then(function (response) {
+        console.log(response);
+      });
+  }
+
   render(){
+    this.getData();
         return(
             <header className="mdl-layout__header mdl-layout__header--scroll mdl-color--grey-200">
             <div className="mdl-layout__header-row">
