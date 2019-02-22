@@ -12,3 +12,46 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+
+html, body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+table td {
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+table th {
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-top: 1px solid;
+}
+
+.title_screen {
+  color: black;
+}
+
+.table-container {
+  margin-top: 10px;
+  max-height: 600px;
+  overflow: auto;
+  position: relative;
+}
+
+.mdl-dialog {
+  height: auto;
+  width: auto;
+  top: 10%;
+}
