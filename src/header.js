@@ -32,35 +32,32 @@ class Header extends Component {
           const { isLoading, data } = this.state;
           console.log(data);
           return(
-              <header className="mdl-layout__header mdl-layout__header--scroll mdl-color--grey-200">
-              <div className="mdl-layout__header-row">
-              <span className="mdl-layout-title mdl-layout--large-screen-only" id="title_screen" style={{color: 'black'}}> SEPTA UI - DEV: V2.0.0.0 </span>
-                  <nav className="mdl-navigation">
-                      <button id="reports-menu-lower-left" className="mdl-button mdl-js-button">
-                        Reports
-                      </button>
-                      <ul className="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-                          htmlFor="reports-menu-lower-left">
-                        <li className="mdl-menu__item" onClick={() => {this.showAlert("")}}>Trains</li>
-                        <li className="mdl-menu__item" onClick={() => {this.showAlert("")}}>Subway</li>
-                        <li className="mdl-menu__item" onClick={() => {this.showAlert("")}}>Trolley</li>
-                        <li className="mdl-menu__item" onClick={() => {this.showAlert("")}}>Buses</li>
-                      </ul>
+          <header className="mdl-layout__header mdl-layout__header--scroll mdl-color--grey-200">
+          <div className="mdl-layout__header-row">
+          <span className="mdl-layout-title mdl-layout--large-screen-only" id="title_screen" style={{color: 'black'}}> SEPTA UI - DEV: V2.0.0.0 </span>
+              <nav className="mdl-navigation">
+                  <button id="airports-menu-lower-left" className="mdl-button mdl-js-button">
+                    Airports
+                  </button>
+                  <button id="train-menu-lower-left" className="mdl-button mdl-js-button mdl-color-text--black">
+                    Train Systems
+                  </button>
+                  <button id="rail-menu-lower-left" className="mdl-button mdl-js-button">
+                    Rail Systems
+                  </button>
+                  <button id="bus-menu-lower-left" className="mdl-button mdl-js-button">
+                    Bus Systems
+                  </button>
+                  <button id="trolley-menu-lower-left" className="mdl-button mdl-js-button">
+                    Trolley Systems
+                  </button>
+                  <button id="weather-menu-lower-left" className="mdl-button mdl-js-button">
+                    Weather Data
+                  </button>
+              </nav>
+          </div>
+          </header>
 
-                      <button id="maintenance-menu-lower-left" className="mdl-button mdl-js-button mdl-color-text--black">
-                        Maintenance
-                      </button>
-                      <ul className="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-                          htmlFor="maintenance-menu-lower-left">
-                        <li className="mdl-menu__item" onClick={() => {this.showAlert("")}}>MyView</li>
-                        <li className="mdl-menu__item" onClick={() => {this.showAlert("")}}>TransitView</li>
-                        <li className="mdl-menu__item" onClick={() => {this.showAlert("")}}>Bus Detours</li>
-                        <li className="mdl-menu__item" onClick={() => {this.showAlert("")}}>System Alerts</li>
-                        <li className="mdl-menu__item" onClick={() => {this.showAlert("")}}>Elevator Outages</li>
-                      </ul>
-                  </nav>
-              </div>
-              </header>
             );
           }
   }
