@@ -11,10 +11,6 @@ class Header extends Component {
       };
   }
 
-  showAlert(report){
-    console.log(report);
-  }
-
   getHeaderData(){
     axios.get('http://www3.septa.org/hackathon/TrainView/')
           .then(res => {

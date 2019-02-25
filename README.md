@@ -5,4 +5,4 @@
 
 `npm run start` - starts the project in webpack dev server on localhost:3333
 
-DO NOT STEAL ANY OF THIS CODE.
+DO NOT STEAL ANY OF THIS CODE, THIS IS MY MASTER'S WORK PLZ

@@ -1,10 +1,6 @@
 /*** webpack.config.js ***/
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const htmlWebpackPlugin = new HtmlWebpackPlugin({
-    template: path.join(__dirname, "./src/index.html"),
-    filename: "./index.html"
-});
 module.exports = {
     entry: path.join(__dirname, "./src/index.js"),
     output: {
@@ -24,7 +20,36 @@ module.exports = {
             }
         ]
     },
-    plugins: [htmlWebpackPlugin],
+    plugins: [
+      new HtmlWebpackPlugin({
+          template: path.join(__dirname, "./src/index.html"),
+          filename: "./index.html"
+      }),
+      new HtmlWebpackPlugin({
+          template: path.join(__dirname, "./src/airline.html"),
+          filename: "./airline.html"
+      }),
+      new HtmlWebpackPlugin({
+          template: path.join(__dirname, "./src/bus.html"),
+          filename: "./bus.html"
+      }),
+      new HtmlWebpackPlugin({
+          template: path.join(__dirname, "./src/rail.html"),
+          filename: "./rail.html"
+      }),
+      new HtmlWebpackPlugin({
+          template: path.join(__dirname, "./src/train.html"),
+          filename: "./train.html"
+      }),
+      new HtmlWebpackPlugin({
+          template: path.join(__dirname, "./src/trolley.html"),
+          filename: "./trolley.html"
+      }),
+      new HtmlWebpackPlugin({
+          template: path.join(__dirname, "./src/weather.html"),
+          filename: "./weather.html"
+      }),
+    ],
     resolve: {
         extensions: [".js", ".jsx"]
     },
