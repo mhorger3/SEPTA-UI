@@ -7,26 +7,22 @@
 var https = require('https');
 
 
-exports.handler = function index(event, context, callback) {
+exports.handler = function (intent, session, callback) {
     var options = {
     host: 'api.openweathermap.org', // connect to quizlet API
     port: 443,
     path: '/data/2.5/weather?q=Philadelphia&appid=c7108cad625b9e79582c6512938c3a5a',
     method: 'GET'
     };
-
+    var body = '';
     var req = https.request(options, function(res) {
-        var body = '';
-        console.log('Status:', res.statusCode);
-        console.log('Headers:', JSON.stringify(res.headers));
         res.setEncoding('utf8');
         res.on('data', function(chunk) {
             body += chunk;
         });
         res.on('end', function() {
-            console.log('Successfully processed HTTPS response');
             body = JSON.parse(body); //
-            console.log(body); // log the data just for debug
+            callback(null, body);
         });
     });
     req.end(); // actually executes our code
