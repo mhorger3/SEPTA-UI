@@ -5,7 +5,7 @@
 
 'use strict';
 var https = require('https');
-
+var mysql = require('mysql');
 
 exports.handler = function (intent, session, callback) {
     var options = {
