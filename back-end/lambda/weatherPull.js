@@ -21,9 +21,40 @@ exports.handler = function (intent, session, callback) {
             body += chunk;
         });
         res.on('end', function() {
-            body = JSON.parse(body); //
+            body = JSON.parse(body);
+            body = parseData(body); // parse our data into our DB Units
+
+            // need to call DB to insert info
+            var con = mysql.createConnection({
+                  host: "weatherdata.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
+                  user: "lambda",
+                  password: "lambda",
+                  database: "weatherview"
+                });
+
+            con.connect(function(err) {
+              if (err) throw err;
+              console.log("Connected!");
+            });
+
+            var sql = "SELECT * FROM Philadelphia";
+            con.query(sql, function (err, result) {
+            if (err) throw err;
+            console.log("Result: " + result);
+            });
+            con.end();
+
+
             callback(null, body);
         });
     });
     req.end(); // actually executes our code
+
+
 };
+
+function parseData(body){
+    body.main.temp = (body.main.temp - 273.15) * 9/5 + 32; // convert temperature into cel. and then into far.
+    body.main.pressure = (body.main.pressure / 1013.25); // convert atm to MB, a more accepted unit for us Americans
+    return body;
+}
