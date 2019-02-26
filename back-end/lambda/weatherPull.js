@@ -56,5 +56,9 @@ exports.handler = function (intent, session, callback) {
 function parseData(body){
     body.main.temp = (body.main.temp - 273.15) * 9/5 + 32; // convert temperature into cel. and then into far.
     body.main.pressure = (body.main.pressure / 1013.25); // convert atm to MB, a more accepted unit for us Americans
+    body.wind.speed = (body.wind.speed * 2.237); // convert to MPH
+    if(body.wind.gust != undefined){
+        body.wind.gust = (body.wind.gust * 2.237);
+    }
     return body;
 }
