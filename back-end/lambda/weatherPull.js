@@ -68,7 +68,7 @@ exports.handler = function (intent, session, callback) {
                   body.visibility +","+
                   body.wind.speed +","+
                   body.wind.gust +","+
-                  body.clouds.all +", NOW());";
+                  body.clouds.all +", CONVERT_TZ(Now(), 'GMT', 'EST'));";
           console.log(sql);
             con.query(sql, function (err, result) {
             if (err) throw err;
@@ -81,4 +81,6 @@ exports.handler = function (intent, session, callback) {
         });
     });
     req.end(); // actually executes our code
+
+
 };
