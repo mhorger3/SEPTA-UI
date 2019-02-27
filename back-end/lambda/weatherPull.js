@@ -23,6 +23,20 @@ exports.handler = function (intent, session, callback) {
         res.on('end', function() {
             body = JSON.parse(body);
             body = parseData(body); // parse our data into our DB Units
+            var rain, snow, gust; // need these variables to set defaults in case they are empty for the SQL query
+            if(body.rain == undefined){
+                body.rain = [];
+                body.rain.rain1h = "";
+            }
+            if(body.snow == undefined){
+                body.snow = [];
+                body.snow.snow1h = "";
+            }
+            if(body.wind.gust == undefined){
+                body.wind.gust == "";
+            }
+            var datetime = new Date();
+            console.log(datetime);
 
             // need to call DB to insert info
             var con = mysql.createConnection({
@@ -37,7 +51,20 @@ exports.handler = function (intent, session, callback) {
               console.log("Connected!");
             });
 
-            var sql = "SELECT * FROM Philadelphia";
+            var sql = "INSERT INTO Philadelphia VALUES("
+                + body.weather.main +","+
+                  body.weather.description +","+
+                  body.rain.rain1h +","+
+                  body.snow.snow1h +","+
+                  body.main.temp +","+
+                  body.main.pressure +","+
+                  body.main.humidity +","+
+                  body.visibility +","+
+                  body.wind.speed +","+
+                  body.wind.gust +","+
+                  body.clouds.all +","+
+                  datetime + ");";
+                  ;
             con.query(sql, function (err, result) {
             if (err) throw err;
             console.log("Result: " + result);
@@ -56,7 +83,7 @@ exports.handler = function (intent, session, callback) {
 function parseData(body){
     body.main.temp = (body.main.temp - 273.15) * 9/5 + 32; // convert temperature into cel. and then into far.
     body.main.pressure = (body.main.pressure / 1013.25); // convert atm to MB, a more accepted unit for us Americans
-    body.wind.speed = (body.wind.speed * 2.237); // convert to MPH
+    body.wind.speed = (body.wind.speed * 2.237);
     if(body.wind.gust != undefined){
         body.wind.gust = (body.wind.gust * 2.237);
     }
