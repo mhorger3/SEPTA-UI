@@ -25,11 +25,11 @@ exports.handler = function (intent, session, callback) {
             var rain, snow, gust; // need these variables to set defaults in case they are empty for the SQL query
             if(body.rain == undefined){
                 body.rain = [];
-                body.rain.rain1h = null;
+                body.rain["1h"] = null;
             }
             if(body.snow == undefined){
                 body.snow = [];
-                body.snow.snow1h = null;
+                body.snow["1h"] = null;
             }
             if(body.wind.gust == undefined){
                 body.wind.gust = null;
@@ -41,8 +41,6 @@ exports.handler = function (intent, session, callback) {
             if(body.wind.gust != undefined){
                 body.wind.gust = (body.wind.gust * 2.237);
             }
-
-            console.log(body);
 
             // need to call DB to insert info
             var con = mysql.createConnection({
@@ -60,8 +58,8 @@ exports.handler = function (intent, session, callback) {
             var sql = "INSERT INTO Philadelphia VALUES('"
                 + body.weather[0].main +"','"+
                   body.weather[0].description +"',"+
-                  body.rain.rain1h +","+
-                  body.snow.snow1h +","+
+                  body.rain["1h"] +","+
+                  body.snow["1h"] +","+
                   body.main.temp +","+
                   body.main.pressure +","+
                   body.main.humidity +","+
