@@ -1,0 +1,6 @@
+Each database is split into 3 month periods of data, with an all-time daily table stored on transitviewdata for each transit service.
+Each of the septa databases will have 4 schemas pertaining to each of the SEPTA services (Rail, Light Rail, Trolley, Bus).
+Then, each of those schemas will have tables for each unit associated with the service. For example, there will be over 100 tables for the Bus schema, but only 3 for Light Rail.
+Each of the tables will be cleaned every day at EOD service in order to fill the next days worth of information, but not before updating the legacy data in transitviewdata.
+
+Essentially, this is a cluster structure, abstracted down for each SEPTA service. There is probably a better way of doing this using NOSQL, but I'm lazy and don't know about that.
