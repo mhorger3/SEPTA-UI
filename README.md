@@ -17,16 +17,17 @@ My main work on machine learning and predicting when transit systems are going t
 ## Technologies
 
 * React UI
-  * This is a work in progress, this may or may not change depending on our middleware solution in EC2
+  * This is a work in progress, this may or may not change depending on our middleware solution
 * Node.JS
   * Webpack
   * Lambda functions
 * Amazon AWS 
   * RDS MySQL
   * CloudWatch
+  * API Gateway
   * Lambda
   * VPC
-  * EC2
+  * Route 53
 
 ---
 
