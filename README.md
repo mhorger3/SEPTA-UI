@@ -1,6 +1,6 @@
-### `SEPTA UI`
-## My main work on machine learning and predicting when transit systems are going to be late due to various conditions like the weather
-#  Drexel University
+### SEPTA UI
+My main work on machine learning and predicting when transit systems are going to be late due to various conditions like the weather
+
 
 [![GitHub Stars](https://img.shields.io/github/stars/mhorger3/SEPTA-UI.svg)](https://github.com/mhorger3/SEPTA-UI/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/mhorger3/SEPTA-UI.svg)](https://github.com/mhorger3/SEPTA-UI/issues) [![Current Version](https://img.shields.io/badge/version-1.0.1-green.svg)](https://github.com/mhorger3/SEPTA-UI)
 
