@@ -9,7 +9,7 @@ var mysql = require('mysql');
 
 exports.handler = function (intent, session, callback) {
     var options = {
-    host: 'api.openweathermap.org', // connect to quizlet API
+    host: 'api.openweathermap.org', // connect to OpenWeather API
     port: 443,
     path: '/data/2.5/weather?q=Philadelphia&appid=c7108cad625b9e79582c6512938c3a5a',
     method: 'GET'
