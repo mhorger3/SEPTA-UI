@@ -10,8 +10,8 @@ var mysql = require('mysql');
 exports.handler = function (intent, session, callback) {
     var options = {
     host: 'www3.septa.org', // connect to SEPTA API
-    port: 443,
-    path: '/hackathon/TransitView/10',
+    port: 80,
+    path: '/hackathon/TrainView/',
     method: 'GET'
     };
     var body = '';
