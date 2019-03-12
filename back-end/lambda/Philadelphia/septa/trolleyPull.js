@@ -39,8 +39,7 @@ function route10(){
               var con = mysql.createConnection({
                 host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda",
-                database: "Trolley"
+                password: "lambda"
               });
 
               con.connect(function(err) {
@@ -48,7 +47,7 @@ function route10(){
                 console.log("Connected!");
               });
 
-              var sql = "INSERT INTO ROUTE_10 VALUES("
+              var sql = "INSERT INTO Trolley.ROUTE_10 VALUES("
                   + body.bus[trolley].lat +","+
                     body.bus[trolley].lng +","+
                     body.bus[trolley].trip +","+
@@ -88,8 +87,7 @@ function route11(){
               var con = mysql.createConnection({
                 host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda",
-                database: "Trolley"
+                password: "lambda"
               });
 
               con.connect(function(err) {
@@ -97,7 +95,7 @@ function route11(){
                 console.log("Connected!");
               });
 
-              var sql = "INSERT INTO ROUTE_11 VALUES("
+              var sql = "INSERT INTO Trolley.ROUTE_11 VALUES("
                   + body.bus[trolley].lat +","+
                     body.bus[trolley].lng +","+
                     body.bus[trolley].trip +","+
@@ -137,8 +135,7 @@ function route13(){
               var con = mysql.createConnection({
                 host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda",
-                database: "Trolley"
+                password: "lambda"
               });
 
               con.connect(function(err) {
@@ -146,7 +143,7 @@ function route13(){
                 console.log("Connected!");
               });
 
-              var sql = "INSERT INTO ROUTE_13 VALUES("
+              var sql = "INSERT INTO Trolley.ROUTE_13 VALUES("
                   + body.bus[trolley].lat +","+
                     body.bus[trolley].lng +","+
                     body.bus[trolley].trip +","+
@@ -186,8 +183,7 @@ function route15(){
               var con = mysql.createConnection({
                 host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda",
-                database: "Trolley"
+                password: "lambda"
               });
 
               con.connect(function(err) {
@@ -195,7 +191,7 @@ function route15(){
                 console.log("Connected!");
               });
 
-              var sql = "INSERT INTO ROUTE_15 VALUES("
+              var sql = "INSERT INTO Trolley.ROUTE_15 VALUES("
                   + body.bus[trolley].lat +","+
                     body.bus[trolley].lng +","+
                     body.bus[trolley].trip +","+
@@ -235,8 +231,7 @@ function route34(){
               var con = mysql.createConnection({
                 host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda",
-                database: "Trolley"
+                password: "lambda"
               });
 
               con.connect(function(err) {
@@ -244,7 +239,7 @@ function route34(){
                 console.log("Connected!");
               });
 
-              var sql = "INSERT INTO ROUTE_34 VALUES("
+              var sql = "INSERT INTO Trolley.ROUTE_34 VALUES("
                   + body.bus[trolley].lat +","+
                     body.bus[trolley].lng +","+
                     body.bus[trolley].trip +","+
@@ -284,8 +279,7 @@ function route36(){
               var con = mysql.createConnection({
                 host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda",
-                database: "Trolley"
+                password: "lambda"
               });
 
               con.connect(function(err) {
@@ -293,7 +287,7 @@ function route36(){
                 console.log("Connected!");
               });
 
-              var sql = "INSERT INTO ROUTE_36 VALUES("
+              var sql = "INSERT INTO Trolley.ROUTE_36 VALUES("
                   + body.bus[trolley].lat +","+
                     body.bus[trolley].lng +","+
                     body.bus[trolley].trip +","+
@@ -333,8 +327,7 @@ function route101(){
               var con = mysql.createConnection({
                 host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda",
-                database: "Trolley"
+                password: "lambda"
               });
 
               con.connect(function(err) {
@@ -342,7 +335,7 @@ function route101(){
                 console.log("Connected!");
               });
 
-              var sql = "INSERT INTO ROUTE_101 VALUES("
+              var sql = "INSERT INTO Trolley.ROUTE_101 VALUES("
                   + body.bus[trolley].lat +","+
                     body.bus[trolley].lng +","+
                     body.bus[trolley].trip +","+
@@ -382,8 +375,7 @@ function route102(){
               var con = mysql.createConnection({
                 host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda",
-                database: "Trolley"
+                password: "lambda"
               });
 
               con.connect(function(err) {
@@ -391,7 +383,7 @@ function route102(){
                 console.log("Connected!");
               });
 
-              var sql = "INSERT INTO ROUTE_102 VALUES("
+              var sql = "INSERT INTO Trolley.ROUTE_102 VALUES("
                   + body.bus[trolley].lat +","+
                     body.bus[trolley].lng +","+
                     body.bus[trolley].trip +","+
