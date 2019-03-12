@@ -16,7 +16,7 @@ exports.handler = function (intent, session, callback) {
   route36();
   route101();
   route102();
-    callback(null, body);
+  callback(null);
 };
 
 function route10(){
