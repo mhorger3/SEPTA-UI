@@ -24,40 +24,33 @@ exports.handler = function (intent, session, callback) {
             body = JSON.parse(body); //
             for (var trolley in body.bus)
             {
-               console.log(body.bus[trolley].trip);
+                var con = mysql.createConnection({
+                  host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
+                  user: "lambda",
+                  password: "lambda",
+                  database: "Trolley"
+                });
+
+                con.connect(function(err) {
+                  if (err) throw err;
+                  console.log("Connected!");
+                });
+
+                var sql = "INSERT INTO ROUTE_10 VALUES("
+                    + body.bus[trolley].lat +","+
+                      body.bus[trolley].lng +","+
+                      body.bus[trolley].trip +","+
+                      body.bus[trolley].VehicleID +",'"+
+                      body.bus[trolley].Direction +"','"+
+                      body.bus[trolley].destinaion +"',"+
+                      body.bus[trolley].late +", CONVERT_TZ(Now(), 'GMT', 'EST'));";
+                console.log(sql);
+                con.query(sql, function (err, result) {
+                    if (err) throw err;
+                    console.log("Result: " + result);
+                });
+                con.end();
             }
-
-           /* var con = mysql.createConnection({
-              host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
-              user: "lambda",
-              password: "lambda",
-              database: "Trolley"
-            });
-
-            con.connect(function(err) {
-              if (err) throw err;
-              console.log("Connected!");
-            });
-
-            var sql = "INSERT INTO ROUTE_10 VALUES('"
-                + body.weather[0].main +"','"+
-                  body.weather[0].description +"',"+
-                  body.rain["1h"] +","+
-                  body.snow["1h"] +","+
-                  body.main.temp +","+
-                  body.main.pressure +","+
-                  body.main.humidity +","+
-                  body.visibility +","+
-                  body.wind.speed +","+
-                  body.wind.gust +","+
-                  body.clouds.all +", CONVERT_TZ(Now(), 'GMT', 'EST'));";
-            console.log(sql);
-            con.query(sql, function (err, result) {
-                if (err) throw err;
-                console.log("Result: " + result);
-            });
-            con.end();
-            */
         });
     });
     req.end(); // actually executes our code
