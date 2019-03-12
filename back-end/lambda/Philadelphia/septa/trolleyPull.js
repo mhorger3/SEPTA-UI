@@ -42,7 +42,7 @@ exports.handler = function (intent, session, callback) {
                       body.bus[trolley].trip +","+
                       body.bus[trolley].VehicleID +",'"+
                       body.bus[trolley].Direction +"','"+
-                      body.bus[trolley].destinaion +"',"+
+                      body.bus[trolley].destination +"',"+
                       body.bus[trolley].late +", CONVERT_TZ(Now(), 'GMT', 'EST'));";
                 console.log(sql);
                 con.query(sql, function (err, result) {
