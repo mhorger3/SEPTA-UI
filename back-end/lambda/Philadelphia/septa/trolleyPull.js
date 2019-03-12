@@ -281,7 +281,7 @@ function route36(){
                 user: "lambda",
                 password: "lambda"
               });
-
+              con.query('SET GLOBAL connect_timeout=28800');
               con.connect(function(err) {
                 if (err) throw err;
                 console.log("Connected!");
