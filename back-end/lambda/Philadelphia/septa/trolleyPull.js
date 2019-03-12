@@ -54,7 +54,6 @@ exports.handler = function (intent, session, callback) {
         });
     });
     req.end(); // actually executes our code
-
     callback(null, body);
 
 };
