@@ -58,3 +58,35 @@ exports.handler = function (intent, session, callback) {
     callback(null, body);
 
 };
+
+function route10(){
+
+}
+
+function route11(){
+
+}
+
+function route13(){
+
+}
+
+function route15(){
+
+}
+
+function route34(){
+
+}
+
+function route36(){
+
+}
+
+function route101(){
+
+}
+
+function route102(){
+
+}
