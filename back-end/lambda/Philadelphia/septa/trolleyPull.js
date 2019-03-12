@@ -37,11 +37,11 @@ function route10(){
           for (var trolley in body.bus)
           {
               var con = mysql.createConnection({
-                host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
+                host: "septa-01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda"
+                password: "lambda",
+                database: "Trolley"
               });
-
               con.connect(function(err) {
                 if (err) throw err;
                 console.log("Connected!");
@@ -56,6 +56,7 @@ function route10(){
                     body.bus[trolley].destination +"',"+
                     body.bus[trolley].late +", CONVERT_TZ(Now(), 'GMT', 'EST'));";
               console.log(sql);
+
               con.query(sql, function (err, result) {
                   if (err) throw err;
                   console.log("Result: " + result);
@@ -85,9 +86,10 @@ function route11(){
           for (var trolley in body.bus)
           {
               var con = mysql.createConnection({
-                host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
+                host: "septa-01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda"
+                password: "lambda",
+                database: "Trolley"
               });
 
               con.connect(function(err) {
@@ -133,9 +135,10 @@ function route13(){
           for (var trolley in body.bus)
           {
               var con = mysql.createConnection({
-                host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
+                host: "septa-01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda"
+                password: "lambda",
+                database: "Trolley"
               });
 
               con.connect(function(err) {
@@ -181,9 +184,10 @@ function route15(){
           for (var trolley in body.bus)
           {
               var con = mysql.createConnection({
-                host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
+                host: "septa-01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda"
+                password: "lambda",
+                database: "Trolley"
               });
 
               con.connect(function(err) {
@@ -229,9 +233,10 @@ function route34(){
           for (var trolley in body.bus)
           {
               var con = mysql.createConnection({
-                host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
+                host: "septa-01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda"
+                password: "lambda",
+                database: "Trolley"
               });
 
               con.connect(function(err) {
@@ -277,11 +282,11 @@ function route36(){
           for (var trolley in body.bus)
           {
               var con = mysql.createConnection({
-                host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
+                host: "septa-01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda"
+                password: "lambda",
+                database: "Trolley"
               });
-              con.query('SET GLOBAL connect_timeout=28800');
               con.connect(function(err) {
                 if (err) throw err;
                 console.log("Connected!");
@@ -325,9 +330,10 @@ function route101(){
           for (var trolley in body.bus)
           {
               var con = mysql.createConnection({
-                host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
+                host: "septa-01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda"
+                password: "lambda",
+                database: "Trolley"
               });
 
               con.connect(function(err) {
@@ -373,9 +379,10 @@ function route102(){
           for (var trolley in body.bus)
           {
               var con = mysql.createConnection({
-                host: "septa01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
+                host: "septa-01.ccgbnu8qerao.us-east-1.rds.amazonaws.com",
                 user: "lambda",
-                password: "lambda"
+                password: "lambda",
+                database: "Trolley"
               });
 
               con.connect(function(err) {
