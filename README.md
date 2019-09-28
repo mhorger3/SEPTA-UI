@@ -21,13 +21,17 @@ My main work on machine learning and predicting when transit systems are going t
 * Node.JS
   * Webpack
   * Lambda functions
-* Amazon AWS 
+* Amazon AWS
   * RDS MySQL
   * CloudWatch
   * API Gateway
   * Lambda
   * VPC
   * Route 53
+* Python3
+  * pymongo
+  * Keras/Tensorflow
+  * RESTful API service
 
 ---
 
