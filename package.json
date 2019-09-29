@@ -13,7 +13,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server --mode development --hot --inline"
+    "start": "webpack-dev-server --mode development --hot --inline",
+    "notebook": "jupyter notebook"
   },
   "eslintConfig": {
     "extends": "react-app"
