@@ -2,6 +2,7 @@
 # author: John Zlotek
 # usage: installing python3 virtual environment with packages
 
+command -v pip >/dev/null || (echo "Need to have pip installed" && exit 1)
 command -v virtualenv >/dev/null || pip install virtualenv --user
 
 virtualenv ./venv --python python3 || if [[ $(python --version | egrep '\s3' | wc -l) -eq 1 ]]; then

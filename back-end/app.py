@@ -2,17 +2,27 @@ import os
 import json
 import requests
 import pprint
+import loguru
 
-from dotenv import load_dotenv
-from flask import Flask
+from tornado.ioloop import IOLoop
+from tornado.web import Application
+from routes.BaseHandler import BaseHandler
+import db.database_controller as db
 
-app = Flask(__name__)
-load_dotenv()
+
+def create_app():
+    return Application([
+        (r'/', BaseHandler),
+    ],
+        db=db,
+    )
+
 
 if __name__ == "__main__":
     host = os.environ.get("HOST", "0.0.0.0")
     port = os.environ.get("PORT", 5000)
-    j = json.loads(requests.get('https://api.darksky.net/forecast/4c6ed4cf490531031ccd759d722b2035/42.3601,-71.0589').text)
-    print(pprint.pprint(j))
 
-    # app.run(host=host, port=port)
+    app = create_app()
+    app.listen(port)
+    loguru.logger.info(f'Server starting on port: {port}')
+    IOLoop.current().start()
